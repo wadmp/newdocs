@@ -9,7 +9,7 @@ Use Sign Up only if you are the first from your company to access the platform. 
 If your company is listed as external provider under the Sign in button, sign in straight away (see details below the video).
 
 
-## Sign up Process
+<u>Sign up Process</u>
 
 These are the steps if you prefer instructions instead of a video:
 - Go to [wadmp.com](https://wadmp.com). You will be redirected to the login page
@@ -21,7 +21,7 @@ These are the steps if you prefer instructions instead of a video:
   
 &nbsp;    
 &nbsp;   
-## Sign in with External Provider
+<u>Sign in with External Provider</u>
 
 If your company is listed as External provider, you can sign in straight away.
 

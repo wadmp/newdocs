@@ -59,17 +59,32 @@ module.exports = {
     ],
     sidebar: {
       '/tutorials/': [
-        '',     /* /foo/ */
-        'grafana/',  /* /README.md */
+        '',     /* /README.md/ */
         'sign-up/',   /* README.md */
-        'ui-general-structure/'   /* README.md */
-
+        'ui-general-structure/',   /* README.md */
+        'create-company/',   /* README.md */
+        'create-users/',   /* README.md */
+        'device/',   /* README.md */
+        'search-filter-devices/',   /* README.md */
+        'configuring-router-apps/',   /* README.md */
+        'configuring-on_off-devices/',   /* README.md */
+        'upgrade-fw/',   /* README.md */
+        'move-a-device/'   /* README.md */
       ],
 
       '/explanations/': [
-        '',      /* /bar/ */
-        'three', /* /bar/three.html */
-        'four'   /* /bar/four.html */
+        '',      /* /README.md/ */
+        'device-reported-states/',  /* /README.md */
+        'companies-and-users/',  /* /README.md */
+        'understanding-oauth/',  /* /README.md */
+        'cellular-data-usage/',  /* /README.md */
+        'grouping-and-tagging/',  /* /README.md */
+        'billing/',  /* /README.md */
+        'playbooks/',  /* /README.md */
+        'grafana/',  /* /README.md */
+        'alerts/',  /* /README.md */
+        'auditing-options/'  /* /README.md */
+
       ],
 
       '/baz/': 'auto', /* automatically generate single-page sidebars */
