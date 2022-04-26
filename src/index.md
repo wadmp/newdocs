@@ -1,10 +1,15 @@
 ---
 home: true
-heroImage: ./logo.png
 tagline: Open-source documentation for users of Advantech WebAccess/DMP software
-actionText: Quick Start →
+actionText: Tutorials →
 actionLink: /tutorials/
-footer: Made by Advantech
+features:
+- title: Performance at Scale
+  details: WebAccess/DMP Generation 2 has been built for scale and performance. The backend service architecture includes high-availability broker clusters, with load-balancing and elastic scale enablement. Rest assured that your needs will be met, as you grow and scale your business.
+- title: Extensible Architecture
+  details: The platform has been designed for extensibility. Using leading-edge micro-services enabled architectural best practices, together with leading-edge elastic scale technologies, load balancing and brokerage services, the platform will scale-out as necessary. The user-interface is built on our publicly available API, via our publicly available API Gateway, which enables real-time extensibility to available functionality, and the ability to integrate functionality with your existing services and infrastructure seamlessly - plug in, build-out.
+- title: AssureAuth™ PKI
+  details: Security is built-in by design - we have built a full Public Key Infrastructure (PKI) stack into the product suite - your connected devices are securely provisioned, certified and authenticated. -- Provisioning -- AssureAuth™ PKI is used during the device provisioning sequence. Both device and server must mutually authenticate, using Advantech’s Certificate Authority as the root of trust. Once successfully provisioned via a successful bootstrapping sequence, the devices will automatically connect with the platform.
 ---
 
 
@@ -95,3 +100,9 @@ Location Monitoring is also available, and can be enabled to show you precise GP
 WebAccess/DMP Generation is Fully API Enabled : in fact, we built our entire user-interface application using the publicly-available secure REST based API, via our publicly available API gateway, which you can find at [https://api.wadmp.com](https://api.wadmp.com/)
 
 This means that you have the power of interoperability with your existing infrastructure: integrate the available services that we provide with the services you wish to observe or consume. 
+
+::: slot footer
+Made by Advantech | Copyright © 2018-present [Evan You](https://github.com/yyx990803)
+:::
+
+

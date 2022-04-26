@@ -26,6 +26,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+    logo: '/assets/img/logo.png',
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -47,8 +48,7 @@ module.exports = {
       {
         text: 'Client Release Notes',
         link: '/client/'
-      },
-      
+      },      
       {
         text: 'Support & Contact',
         link: '/contact/'
@@ -67,7 +67,6 @@ module.exports = {
         'upgrade-fw/',   /* README.md */
         'move-a-device/'   /* README.md */
       ],
-
       '/explanations/': [
         '',      /* /README.md/ */
         'companies-and-users/',  /* /README.md */
@@ -91,8 +90,10 @@ module.exports = {
         '2.1.1/',  /* /2.1.1.md */
         '2.1.0/'  /* /2.1.0.md */
       ],
-
-      
+      '/client/': [
+      ],
+      '/contact/': [
+      ],
       '/client/': [
         ' '      /* /README.md/ */
       ],
@@ -107,7 +108,7 @@ module.exports = {
         'about'    /* /about.html */
       ]
     },
-    displayAllHeaders: true 
+    sidebarDepth: 5
   },
 
   /**
