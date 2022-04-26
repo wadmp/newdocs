@@ -45,13 +45,10 @@ module.exports = {
         link: '/release-notes/'
       },
       {
-        text: 'Client Router App',
+        text: 'Client Release Notes',
         link: '/client/'
       },
-      {
-        text: 'References',
-        link: '/references/'
-      },
+      
       {
         text: 'Support & Contact',
         link: '/contact/'
@@ -60,7 +57,6 @@ module.exports = {
     sidebar: {
       '/tutorials/': [
         '',     /* /README.md/ */
-        'sign-up/',   /* README.md */
         'ui-general-structure/',   /* README.md */
         'create-company/',   /* README.md */
         'create-users/',   /* README.md */
@@ -74,7 +70,6 @@ module.exports = {
 
       '/explanations/': [
         '',      /* /README.md/ */
-        'device-reported-states/',  /* /README.md */
         'companies-and-users/',  /* /README.md */
         'understanding-oauth/',  /* /README.md */
         'cellular-data-usage/',  /* /README.md */
@@ -84,14 +79,30 @@ module.exports = {
         'grafana/',  /* /README.md */
         'alerts/',  /* /README.md */
         'auditing-options/'  /* /README.md */
-
       ],
+
+      '/release-notes/': [
+        '',      /* /README.md/ */
+        '2.4.1/',  /* /2.4.1.md */
+        '2.4.0/',  /* /2.4.0.md */
+        '2.3.1/',  /* /2.3.1.md */
+        '2.3.0/',  /* /2.3.0.md */
+        '2.2.0/',  /* /2.2.0.md */
+        '2.1.1/',  /* /2.1.1.md */
+        '2.1.0/'  /* /2.1.0.md */
+      ],
+
+      
+      '/client/': [
+        ' '      /* /README.md/ */
+      ],
+
 
       '/baz/': 'auto', /* automatically generate single-page sidebars */
 
       // fallback
       '/': [
-        '',        /* / */
+        '',        /* / */ 
         'contact', /* /contact.html */
         'about'    /* /about.html */
       ]
