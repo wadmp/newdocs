@@ -18,11 +18,11 @@ If you are in more companies, then select exactly one company you want to manage
 
 Select the devices you want to group
 
-![alt text](../images/explanations-discussions/Grouping-and-tagging/3.png)
+![alt text](./3.png)
 
 and scroll to the end of the page and click "Set Group".
 
-![alt text](../images/explanations-discussions/Grouping-and-tagging/4.png)
+![alt text](./4.png)
 
 1. Name the group here,
 2. or add to an existing group,

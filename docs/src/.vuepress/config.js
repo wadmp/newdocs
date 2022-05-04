@@ -1,6 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
+  base: "/newdocs.wadmp.github.io/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -96,12 +97,6 @@ module.exports = {
       '/eula': [
       ],
       '/privacy-policy': [
-      ],
-      // fallback
-      '/': [
-        '',        /* / */ 
-        'contact', /* /contact.html */
-        'about'    /* /about.html */
       ]
     },
     sidebarDepth: 5,

@@ -10,7 +10,8 @@
   "repository": "/WebAccess/DMP Documentation",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "docs:build": "vuepress build src"
   },
   "license": "MIT",
   "devDependencies": {
