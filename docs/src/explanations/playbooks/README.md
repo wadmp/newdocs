@@ -1,6 +1,6 @@
 # Playbooks Explained 
 
-Playbook is a set of defined actions that can be run on devices. 
+The playbook is a set of defined actions that can be run on devices. 
 
 To create a playbook, go to Playbooks -> My Playbooks in the left menu and use the grid plus icon to create a new one.
 
@@ -10,7 +10,7 @@ The playbook can be scheduled or run immediately by clicking on the calendar ico
 
 ## Available Playbook Actions
 
-When creating playbook, fill in the name, company and the device type. A playbook can be run only for single device type because of settings differences between the device types. Select the devices you want to run playbook for.
+When creating a playbook, fill in the name, company, and device type. A playbook can be run only for a single device type because of setting differences between the device types. Select the devices you want to run the playbook for.
 
 You can add these types of actions to the playbook:
 
@@ -28,7 +28,7 @@ The state of the playbook can be found in the list of the playbooks or after cli
 
 ![Playbooks](./03.png "Playbooks")
 
-Once created the playbook is in the state
+Once created, the playbook is in the state
 * Draft 
 
 and can be edited or deleted. 
@@ -37,7 +37,7 @@ Once the playbook is
 
 * Scheduled (Queued) 
 
-it can be unscheduled and then goes back to Draft state. 
+it can be unscheduled and then goes back to the Draft state. 
 
 Once run, the playbook can be in one of these states:
 
@@ -45,16 +45,16 @@ Once run, the playbook can be in one of these states:
 * Completed
 * Completed with Failure (some actions completed, some were started but failed)
 * Failed (all actions failed)
-* Aborted (aborted when runnig)
-* Incomplete (some actions completed, but some actions could not be started, e.g. one device is offline during all attempts to run a playbook).
+* Aborted (aborted when running)
+* Incomplete (some actions completed, but some could not be started, e.g., one device is offline during all attempts to run a playbook).
 
 See the device actions details by clicking the eye icon on the right.
 
 If the playbook is run on the offline device, the status may be "Incomplete", but it is remembered to run the actions after the device appears online again. When the device is back online, the playbook is finished and reaches the "Completed" status.
 
-[//]: # (When the playbook is run, it tries to do all the actions planned - does not stop after first failure, goes to another device.) 
+[//]: # (When the playbook is run, it tries to do all the actions planned - does not stop after the first failure, it goes to another device.) 
 
-The playbook run is affected by sync engine and by default, the actions are attempted to run 3 times (see details on sync configuration below).
+The playbook run is affected by the sync engine, and by default, the actions are attempted to run three times (see details on sync configuration below).
 
 You can filter the playbooks by state using this icon:
 
@@ -63,7 +63,7 @@ You can filter the playbooks by state using this icon:
 
 ## Sync Configuration via API
 
-Playbooks running behaviour is affected by the sync engine. The sync engine uses the default configuration (sync type, retry interval, retry attempts) and it currently cannot be changed in the UI.
+Playbooks running behavior is affected by the sync engine. The sync engine uses the default configuration (sync type, retry interval, retry attempts), and it currently cannot be changed in the UI.
 
 It can be changed via [API](https://api.wadmp.com/#!/apis/cc753663-54c3-447a-b536-6354c3047ae6/detail) call PUT /syncengine/config:
 

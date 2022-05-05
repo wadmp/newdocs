@@ -6,21 +6,21 @@
 
 WebAccess/DMP follows the [LightWeightM2M](https://www.omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/) protocol for "Client-Initiated Bootstrap", using "Certificate mode with Enrollment over Secure Transport" for maximum security.
 
-You do not need to understand this protocol in order to follow this procedure, but it may provide some useful background information.
+You do not need to understand this procedure to follow it, but it may provide helpful background information.
 
-What you do need to understand is that a WebAccess/DMP server installation actually comprises several individual "servers":
+What you do need to understand is that a WebAccess/DMP server installation comprises several individual "servers":
 
 ![summary block diagram](./summary.png)
 
-The Bootstrap Server is used to direct the Client to one or more Management Servers.
+The Bootstrap Server is used to direct the client to one or more Management Servers.
 
 During a bootstrap procedure, the Bootstrap Server provides two things to the client:
 1. The address of the Management Server which will manage the device;
-2. A security certificate which the client can use to identify itself to that Management Server.
+2. A security certificate that the client can use to identify itself to that Management Server.
 
 The Management Server performs all of the actual device management tasks: firmware upgrade, device configuration, device monitoring, etc.
 
-The Management Server may occasionally direct the Client to download a file from the Content Server, but for the purposes of this discussion the Content Server is irrelevant.
+The Management Server may occasionally direct the client to download a file from the Content Server, but the Content Server is irrelevant for this discussion.
 
 ### Client configuration
 
@@ -31,11 +31,11 @@ The following image is a screenshot of the "WebAccess/DMP Client" Router Apps ru
 ![local webserver](./BS_URL.png)
 Note that there is no way to directly configure the client to point to a new Management Server.
 
-In order to move a device to a new Management Server, you have two choices ...
+To move a device to a new Management Server, you have two choices.
 
 ### Option 1
 
-Assuming you have access to the local webserver on the device, you can simply change the Bootstrap Server Address in the Router App configuration screen.
+Assuming you have access to the local web server on the device, you can change the Bootstrap Server Address in the Router App configuration screen.
 
 ![option 1](./2_servers_a.png)
 
@@ -53,9 +53,9 @@ Maintain the connection between the device and the original Bootstrap Server, bu
 
 Advantages:
 
-* The configuration change can be done via WebAccess/DMP itself, and can therefore be automated for multiple devices;
+* The configuration change can be done via WebAccess/DMP itself and can therefore be automated for multiple devices;
 * If Server 2 fails for some reason, the device will always fall back to the original Bootstrap Server for new instructions;
-* This approach allows for new use-cases and business models. For example, you can move a device to a new Management Server temporarily, safe in the knowledge that when the new server dies, the device can be recovered.
+* This approach allows for new use-cases and business models. For example, you can temporarily move a device to a new Management Server, safe in knowing that when the new server dies, the device can be recovered.
 
 The rest of this article will explain the procedure for this approach (Option 2).
 
@@ -65,9 +65,9 @@ The rest of this article will explain the procedure for this approach (Option 2)
 
 ## General case
 
-In the block diagrams above, we assume that the client on the device was originally configured to connect to the Bootstrap Server on Server 1.
+In the block diagrams above, we assume that the client on the device was initially configured to connect to the Bootstrap Server on Server 1.
 
-Usually, the requirement is to move the device to a second server (Server 2), and possibly move it back again (to Server 1) at a later date.
+Usually, the requirement is to move the device to a second server (Server 2) and possibly move it back again (to Server 1) later.
 
 But we also need to consider the most general case. Imagine the device has already been moved from Server 1 to Server 2. Can we move it from Server 2 to Server 3? And from there to Server 4?
 
@@ -75,20 +75,20 @@ The answer is yes. The key is that the device always remembers the URL of its or
 
 In the [Jupyter Notebook](https://github.com/wadmp/wadmp.github.io/blob/master/jupyter_notebooks/move_device.ipynb), you will see that the code handles the general case automatically. It refers to the original Bootstrap Server as "Server 0".
 
-Usually, Server 0 *is* Server 1. So in order to avoid over-complicating things, for the remainder of this document we will make that assumption.
+Usually, Server 0 *is* Server 1. So to avoid over-complicating things, we will make that assumption for the remainder of this document.
 
 ## Procedure
 
 All of the following steps can be performed using the public REST API of both servers.
 
-You can follow along manually by using the "OpenAPI" (Swagger) documentation page, for example [api.wadmp.com](https://api.wadmp.com).
+You can follow along manually by using the "OpenAPI" (Swagger) documentation page, for example, [api.wadmp.com](https://api.wadmp.com).
 You should have an equivalent page for the second server instance.
 
 Alternatively, the whole procedure has been automated in a Jupyter Notebook that is available in our public GitHub repo: [github.com/wadmp/wadmp.github.io/blob/master/jupyter_notebooks/move_device.ipynb](https://github.com/wadmp/wadmp.github.io/blob/master/jupyter_notebooks/move_device.ipynb)
 
 ### Step 1: Tell the Bootstrap Server to which Management Server the device should be directed
 
-By default, in any particular WebAccess/DMP server deployment, the Bootstrap Server is configured to direct all devices to the Management Server that is co-located with the Bootstrap Server.
+By default, in any particular WebAccess/DMP server deployment, the Bootstrap Server is configured to direct all devices to the Management Server co-located with the Bootstrap Server.
 
 In this step, you configure the Bootstrap Server on Server 1 to direct a device to a *different* Management Server: the Management Server on Server 2.
 
@@ -96,14 +96,14 @@ In this step, you configure the Bootstrap Server on Server 1 to direct a device 
 
 **_Using the Public API of Server 1 ..._**
 
-In the Bootstrap section, send a POST request to "/bootstrap", to create a new Management Server definition:
+In the Bootstrap section, send a POST request to "/bootstrap" to create a new Management Server definition:
 
 ![POST /bootstrap endpoint](./POST_bootstrap.png)
 
-* "name" is not important: it serves as a label or reminder for the user only.
+* "name" is not essential: it only serves as a label or reminder for the user.
 * "address" is the IP address or DNS name of the Management Server.
-* "port" is the TCP port number of the Management Server. (Usually 8883, which is the standard port number for MQTT over TLS.)
-* "company_id" is your company ID in the system. (Can be obtained using the GET /companies endpoint if you don't know it already.)
+* "port" is the TCP port number of the Management Server. (Usually, 8883, which is the standard port number for MQTT over TLS.)
+Finally, * "company_id" is your company ID in the system. (Can be obtained using the GET /companies endpoint if you don't know it already.)
 
 #### Step 1b
 
@@ -113,17 +113,17 @@ In the Devices section, send a PUT request to "/management/devices/{macAddress}/
 
 ![POST /bootstrap endpoint](./PUT_serverId.png)
 
-This means that the next time the devices performs a Bootstrap procedure, it will be directed to the new Management Server.
+This means that the next time the devices perform a Bootstrap procedure, they will be directed to the new Management Server.
 
-But we are not ready to re-direct it yet ...
+But we are not ready to re-direct it yet.
 
 ### Step 2: Tell the new Management Server to trust the device's Bootstrap Server
 
-The Management Server uses TLS with mutual authentication. i.e. The client must present a digital certificate. The *issuer* of this certificate must be trusted by the Management Server.
+The Management Server uses TLS with mutual authentication. i.e., The client must present a digital certificate. Furthermore, the Management Server must trust the *issuer* of this certificate.
 
-By default, the Bootstrap Server that is co-located with a Management Server is automatically trusted by that Management Server.
+By default, the Bootstrap Server co-located with a Management Server is automatically trusted by that Management Server.
 
-However, if your device has been directed to a *new* Management Server, then by default that Management Server will *not* allow the device to connect, because the client certificate presented was issued by an unknown Bootstrap Server.
+However, if your device has been directed to a *new* Management Server, then by default, that Management Server will *not* allow the device to connect because the client certificate presented was issued by an unknown Bootstrap Server.
 
 You must update the "trust store" of the new Management Server with the certificates used by the device's Bootstrap Server. 
 
@@ -131,19 +131,19 @@ You must update the "trust store" of the new Management Server with the certific
 
 **_Using the Public API of Server 1 ..._**
 
-In the Bootstrap section, use the "GET /certs" endpoint to check what certificates are in the trust store of the current Management Server. i.e. The Management Server on Server 1, where the device is currently connected.
+In the Bootstrap section, use the "GET /certs" endpoint to check what certificates are in the trust store of the current Management Server. i.e., The Management Server on Server 1, where the device is currently connected.
 
 ![GET /certs endpoint](./GET_certs.png)
 
 > **Permissions**
 > 
-> In order to use the "GET /certs" endpoint, you must have the "Device Management Server" permission on Server 1.
+> To use the "GET /certs" endpoint, you must have the "Device Management Server" permission on Server 1.
 > 
 > In the WebAccess/DMP UI, you can view and modify the permissions of any user (on a per-company basis):
 > 
 > ![The permissions screen in the UI](./permission.png)
 > 
-> Alternatively, using the Public API you can view permissions using the "GET /users/{id}" endpoint and modify them using the "PUT /users/{id}/companies" endpoint.
+> Alternatively, using the Public API, you can view permissions using the "GET /users/{id}" endpoint and modify them using the "PUT /users/{id}/companies" endpoint.
 
 The "GET /certs" request will return a JSON object like this:
 ```
@@ -188,16 +188,16 @@ z6CnvTPHCAIhAKcu4nnZydZg1PTYwOZjZ54P5t+eIJKr3cL1Ts3J9Shb
 > 
 > `$ openssl x509 -in <cert> -text -noout`
 > 
-> You will see that the certificates are chained, and end in a self-signed root CA cert.
+> You will see that the certificates are chained and end in a self-signed root CA cert.
 > This is the trust anchor for device authentication.
 
 
 > **Background info.**
 > 
-> If you are *really* interested :), you should know that there is another way to check the Management Server's trust store, without using the API.
+> If you are *really* interested :), you should know that there is another way to check the Management Server's trust store without using the API.
 > 
 > During the TLS (v1.2) handshake, the server sends a "Certificate Request" message to the client.
-> This message actually includes the list of the client Certificate Authorities that are in the server’s trust store.
+> This message includes the client Certificate Authorities listed in the server’s trust store.
 > 
 > If you use the `openssl s_client` command to connect to the Management Server, the output will include "Acceptable client certificate CA names", already decoded for you:
 > 
@@ -384,7 +384,7 @@ Copy and paste the concatenated certificates into a web service like [www.base64
 
 In the Bootstrap section, use the "PUT /certs" endpoint to upload the new Base64-encoded string as "certs".
 
-i.e. Pass the following JSON object in the body:
+i.e., Pass the following JSON object in the body:
 ```
 {
    "certs": "<new Base64-encoded string including new certs>"
@@ -395,15 +395,15 @@ i.e. Pass the following JSON object in the body:
 
 > **Permissions**
 > 
-> In order to use the "PUT /certs" endpoint, you must be a SysAdmin on Server 2.
+> To use the "PUT /certs" endpoint, you must be a SysAdmin on Server 2.
 > 
-> * If your Server 2 instance is an On-Premises installation of WebAccess/DMP, then there will be a SysAdmin user within your organisation.
+> * If your Server 2 instance is an On-Premises installation of WebAccess/DMP, there will be a SysAdmin user within your organization.
 > 
-> * If your Server 2 instance is the public cloud installation of WebAccess/DMP (www.wadmp.com), then only the Advantech SysAdmin has permission to perform this step.
+> * If your Server 2 instance is the public cloud installation of WebAccess/DMP (www.wadmp.com), only Advantech SysAdmin has permission to perform this step.
 
 > **Optional step**
 > 
-> If you used the `openssl s_client` command earlier, you can run it again now and you should find the new client CA(s) listed under "Acceptable client certificate CA names".
+> If you used the `openssl s_client` command earlier, you could rerun it now, and you should find the new client CA(s) listed under "Acceptable client certificate CA names".
 
 ### Step 3: Trigger a new Bootstrap procedure
 
@@ -421,4 +421,4 @@ The connection will be successful if:
 
 1. The X.509 certificates were copied to Server 2 as described in this procedure;
 
-2. The device identity exists in Server 2. i.e. Use the "Create Device" screen in the WebAccess/DMP UI, or the "POST /identity/devices" endpoint in the API.
+2. The device identity exists in Server 2. i.e., Use the "Create Device" screen in the WebAccess/DMP UI or the "POST /identity/devices" endpoint in the API.

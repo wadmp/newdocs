@@ -1,24 +1,24 @@
 # 2.3.0: 9th April 2021
 
-The major new feature introduced by this release is **Billing**. 
+The significant new feature introduced by this release is **Billing**. 
 
-* The default company billing status is "Free", which includes provisioning and management for up to 5 devices.    
+* The default company billing status is "Free", which includes provisioning and managing up to 5 devices.    
 
-* Company can be  upgraded to "Premium", which offers unlimited number of devices and API access, and is billed monthly.
+* Company can be upgraded to "Premium", which offers an unlimited number of devices and API access, and is billed monthly.
 
 ### UI
 
-* Major new feature: Support of billing (company type indication, invoices list).
-* New feature: External OAuth/OpenID providers are now supported (new option on the Sign in form).
+* Major new feature: Support of Billing (company type indication, invoices list).
+* New feature: External OAuth/OpenID providers are now supported (a new option on the Sign-in form).
 * New feature: SIM PIN in the device can be changed from the UI.
-* Bug fix: Playbooks can now be sorted, filtered and searched. Default playbook list is ordered by creation date.
-* Improvement: Subcompanies are now shown in the tree hierarchy under their parent company.
-* Other minor UI improvements were done (Playbooks pagination, small screen adjustments, etc.).
+* Bugfix: Playbooks can now be sorted, filtered, and searched. The default playbook list is ordered by the creation date.
+* Improvement: Sub companies are now shown in the tree hierarchy under their parent company.
+* Other minor UI improvements were made (Playbooks pagination, small screen adjustments, etc.).
 
 ### Code / API
 
-* REST API: new endpoints for managing Companies (change of the company type in regard of billing).
-* Bug fixes: Some numbers on dashboard were not properly calculated.
+* REST API: new endpoints for managing Companies (change of the company type regarding Billing).
+* Bug fixes: Some numbers on the dashboard were not correctly calculated.
 
 ### Content
 
