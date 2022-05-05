@@ -11,8 +11,8 @@ jobs:
       uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: wadmp/newdocs.github.io
+        TARGET_REPO: wadmp/newdocs.wadmp.github.io
         TARGET_BRANCH: master
-        BUILD_SCRIPT: deploy.sh
+        BUILD_SCRIPT: npm run docs:build
         BUILD_DIR: docs/src/.vuepress/dist
         CNAME: https://newdocs.wadmp.com
