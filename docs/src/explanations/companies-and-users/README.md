@@ -6,32 +6,32 @@ This article explains the concepts of company and user on the WebAccess/DMP (WAD
 
 ## Users
 
-There are 2 ways to become a user on WADMP:
+There are two ways to become a user on WADMP:
 
 1. Signup at [WADMP](https://wadmp.com/) by creating an account.
 2. Company administrator creates an account for you.
 
-In both cases the user will receive an email from the platform to confirm their email address. Using the 1st option, the user is the administrator for their company with the following permissions.
+In both cases, the user will receive an email from the platform to confirm their email address. Then, using the 1st option, the user is the administrator for their company with the following permissions.
 
 ![..](./permissions.png)
 
-As you can see you have permissions to view, add, edit and delete most entities on the system. The only permissions that are not present are the permissions to delete and register devices.
+As you can see, you have permission to view, add, edit and delete most entities on the system. The only permissions that are not present are the permissions to delete and register devices.
 
 
 
-Using the 2nd option, the permissions are set by the company administrator
+Using the 2nd option, the permissions are set by the company administrator.
 
-A user may be a member of one or more companies. The user permissions may be different for each company. For example, a user may have create and view user permissions on "Company A" but only view user permission on "Company B". 
+A user may be a member of one or more companies. Therefore, the user permissions may be different for each company. For example, a user may have to create and view user permissions on "Company A" but only view user permission on "Company B". 
 
-**Note**: You cannot assign a permission which you not have yourself.
+**Note**: You cannot assign permission that you do not have yourself.
 
 
 
-When you login to WADMP you can manage devices and users for all companies that you belong to.
+When you log in to WADMP, you can manage devices and users for all companies you belong to.
 
 ![](./companies-view.png)
 
-Click on a company to filter devices belonging to that company
+Click on a company to filter devices belonging to that company.
 
 
 
@@ -43,15 +43,14 @@ Once you have signed up to WADMP, you can now create users and add them to compa
 
 
 
-A parent company is a root level company. You can create as many parent companies as you wish. Parent companies may have many child or sub companies. Child companies may also have sub companies. There are no restrictions on the number of levels of child companies you can create.
+A parent company is a root-level company. You can create as many parent companies as you wish. Parent companies may have many children or sub-companies. Child companies may also have sub-companies. There are no restrictions on the number of levels of child companies you can create.
 
 
 
 ![](./company-hierarchy.png)
 
 
-## (UPDATE URL) ##
-Having created your companies, you can now begin to manage and monitor devices. To manage a device you must first claim it to your company. See [Claim my device](https://docs.wadmp.com/tutorials/ui-claim-my-device.html) 
+Having created your companies, you can now begin to manage and monitor devices. To control a device, you must first claim it to your company. See [Claim my device](https://docs.wadmp.com/tutorials/ui-claim-my-device.html) 
 
 Having claimed your device, you will now be able to configure and monitor it.
 
@@ -59,6 +58,6 @@ Having claimed your device, you will now be able to configure and monitor it.
 
 ## System Administrator
 
-The System Administrator is the administrator for the platform. In addition to the normal permissions, the Sysadmin can also Register and Delete devices and also claim device to any company.
+The System Administrator is the administrator of the platform. In addition to the standard permissions, the Sysadmin can also Register and Delete devices and claim devices to any company.
 
-Contact your Sysadmin if you have any issues that cannot be resolved by your company administrator.
+Contact your Sysadmin if you have any issues that your company administrator cannot resolve.

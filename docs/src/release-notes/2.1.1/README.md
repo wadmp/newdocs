@@ -5,16 +5,16 @@ This release added support for WISE-6610 LoRaWAN Gateways.
 ### Code
 
 * REST API change: New endpoint to delete a section of an application.
-* Bug fix: Default permissions for company admins have been updated.
+* Bugfix: Default permissions for company admins have been updated.
 
 ### Content
 
-* Added support for latest router firmware: 6.2.3.
-* Added latest version of the WA/DMP Client User Module: 2.0.4.
+* Added support for the latest router firmware: 6.2.3.
+* Added the latest version of the WA/DMP Client User Module: 2.0.4.
 * Added support for WISE-6610 LoRaWAN Gateways.
-* Bug fix: Removed historical WLAN section from all firmware > 6.2.0.
-* Bug fix: Firmware binaries were not associated with SPECTRE-v3L-LTE-US devices.
-* Bug fix: Firmware binaries were not associated with XR5i-v2e devices.
+* Bugfix: Removed historical WLAN section from all firmware > 6.2.0.
+* Bugfix: Firmware binaries were not associated with SPECTRE-v3L-LTE-US devices.
+* Bugfix: Firmware binaries were not associated with XR5i-v2e devices.
 
 ### docs.wadmp.com
 

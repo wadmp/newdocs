@@ -12,11 +12,11 @@ Company type can be:
 
 
 
-Company type can be changed only for parent company. Child companies inherit the type from their parent.
+Company type can be changed only for the parent company. Child companies inherit the type from their parent.
 
 ![Parent companies](./parents.png "Parent companies")
 
-If you are a member of parent company, you can also see your company type right under the profile button in the top right corner:
+If you are a member of the parent company, you can also see your company type right under the profile button in the top right corner:
 
 ![User info](./user_info.png "User info")
 
@@ -24,25 +24,25 @@ If you are a member of parent company, you can also see your company type right 
 &nbsp; 
 ## Request Upgrade to Premium
 
-To request the change to Premium, go to Companies list (in the menu on the left) and click the crown button at company you want to request for. 
+To request the change to Premium, go to the Companies list (in the menu on the left) and click the crown button at the company you want to request. 
 
 ![Request upgrade](./request_upgrade.png "Request upgrade")
 
-Fill in the request form and submit.
+Fill in the request form and submit it.
 
 ![Request upgrade form](./request.png "Request upgrade form")
 
-Now e-mail is sent to the sales manager for your region and also confirmation e-mail is sent to you as requester. Sales manager will contact you and negotiate the details.
+Email is sent to the sales manager for your region, and a confirmation email is sent to you as the requester. The sales manager will contact you and negotiate the details.
 
 &nbsp;    
 &nbsp; 
 ## Premium Features
 
-With Premium you are not limited with the number of devices to 5.
+With Premium, you are not limited with the number of devices to 5.
 
 ![Number of devices](./devices.png "Number of devices")
 
-Additionaly you can access these user permissions:
+Additionally, you can access these user permissions:
 
 ![Available permissions](./permissions.png "Avalilable permissions")
 
@@ -50,7 +50,7 @@ Additionaly you can access these user permissions:
 &nbsp;    
 ## Invoices (Premium type companies)
 
-If your company type is Premium, you are billed monthly. The invoices are coming automatically on Primary Contact Email at the company.
+If your company type is Premium, you are billed monthly. The invoices are coming automatically on the Primary Contact Email at the company.
 
 ![Company contact](./primary_contact.png "Company contact")
 
@@ -62,7 +62,7 @@ You can always find all your invoices in the Companies list by clicking on this 
 
 ![Invoices link](./invoices.png "Invoices link")
 
-There is a list of invoices by months. Click on the invoice to see the details or download as PDF by clicking the button on the right. 
+There is a list of invoices by month. Click on the invoice to see the details or download it as a PDF by clicking the button on the right. 
 
 ![Invoices list](./invoices_list.png "Invoices list")
 

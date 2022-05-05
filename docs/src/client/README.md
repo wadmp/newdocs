@@ -3,16 +3,16 @@
 ## Latest version:
 
 ### v2.1.3 (2021-12-08)
-* If router does not measure temperature, send value was modified from 0 degrees to -273 degrees
+* If the router does not measure temperature, send value was modified from 0 degrees to -273 degrees
 * Modification of return codes when installation failure occurs.
 
 ## Download:
 
 We recommend always using the most up-to-date version of the client.
 
-[Download latest client and Application Note (Manual)](https://icr.advantech.cz/products/software/user-modules#webaccessdmp-client)
+[Download the latest client and Application Note (Manual)](https://icr.advantech.cz/products/software/user-modules#webaccessdmp-client)
 
-Client router app can be also upgraded via WebAccess/DMP.
+The client router app can also be upgraded via WebAccess/DMP.
 
 
 ## Previous versions:
@@ -29,8 +29,8 @@ Client router app can be also upgraded via WebAccess/DMP.
 
 ### v2.1.0 (2021-05-31)
 * Syncing problems fix when configuring scripts.
-* MQTT connection is not interrupted when downloading softwre.
-* Reporting settings on connect only if settings were changed or device is not in sync.
+* MQTT connection is not interrupted when downloading software.
+* Reporting settings on connect only if settings were changed or the device is not in sync.
 
 ### v2.0.10 (2021-02-11)
 * Firmware download is automatically resumed.
@@ -43,13 +43,13 @@ Client router app can be also upgraded via WebAccess/DMP.
 * Added support for older firmware when compiled with toolchain 7.4.0 and ModulesSDK 1.8.0
 
 ### v2.0.7 (2020-09-11)
-* bugfix: Downgraded Eclipse Paho MQTT C client library from 1.3.4 to 1.3.1 again in order to fix connectivity issues
+* bugfix: Downgraded Eclipse Paho MQTT C client library from 1.3.4 to 1.3.1 again to fix connectivity issues
 
 ### v2.0.6 (2020-07-06)
 * Upgraded Eclipse Paho MQTT C client library from 1.3.1 to 1.3.4
 * bugfix: Avoid infinite loop situation when IR/Notify fails
-* bugfix: Fix reconnect issue when WAN network fully changed
-* bugfix: Replace non-utf8 characters on IR/Notify with unicode REPLACEMENT CHARACTER
+* bugfix: Fix reconnection issue when WAN network fully changed
+* bugfix: Replace non-utf8 characters on IR/Notify with Unicode REPLACEMENT CHARACTER
 
 ### v2.0.5 (2020-05-28)
 * Support change password feature
@@ -65,8 +65,8 @@ Client router app can be also upgraded via WebAccess/DMP.
 * bugfix: Fix LWT message overwriting real device online status
 
 ### v2.0.2 (2020-03-11)
-* Handle version number with letters, e.g. '1.0.1 alfa' it is now reported as '1.0.1'
-* Fix Monitoring bug where client couldn't get product title
+* Handle version number with letters, e.g., '1.0.1 alfa'. It is now reported as '1.0.1.'
+* Fix Monitoring bug where the client couldn't get the product title
 
 ### v2.0.1 (2020-02-25)
 * WebAccess/DMP Client first release
