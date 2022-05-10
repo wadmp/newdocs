@@ -78,7 +78,9 @@ module.exports = {
         'playbooks/',  /* /README.md */
         'grafana/',  /* /README.md */
         'alerts/',  /* /README.md */
-        'auditing-options/'  /* /README.md */
+        'auditing-options/',  /* /README.md */
+        'gen1-to-gen2-migration/'  /* /README.md */
+
       ],
       '/release-notes/': [
         '',      /* /README.md/ */
