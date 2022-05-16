@@ -5,23 +5,18 @@ We consider two different scenarios:
 
 **Scenario 1:** The customer is using the Production instance of **Gen1** [www.hub.bb-smartworx.com](https://hub.bb-smartworx.com/), and wants to move to the Production instance of **Gen2** [wadmp.com](https://wadmp.com). i.e., These are the public multi-tenant instances.
 
-**Scenario 2:** The customer uses a private on-premise instance of **Gen1** (e.g., Caruna, SL) and wants to move to a private instance of **Gen2**. i.e., Either an on-premise instance or a “hybrid” (private cloud) instance.
+**Scenario 2:** The customer uses a private on-premise instance of **Gen1** and wants to move to a private instance of **Gen2**. i.e., Either an on-premise instance or a “hybrid” (private cloud) instance.
 
 ## Ensure that all existing devices have been created on the new Gen2 instance
 
 **Scenario 1:** No work required.
 
-At the moment, when new devices are manufactured in Usti, they are automatically created on the Production instance of **Gen1** [hub.bb-smartworx.com](https://hub.bb-smartworx.com/)
+At the moment, when new devices are manufactured, they are automatically created on the Production instance of **Gen1** [hub.bb-smartworx.com](https://hub.bb-smartworx.com/)
 
-<u> Note: </u>
-
-We do not know when this manufacturing procedure started, but it was probably around 2015. Therefore, devices older than that may need to be created manually.
+::: tip Note:
+New manufactured devices on the Production instance of Gen1 are automatically created on the Production instance of Gen2  [wadmp.com](https://wadmp.com). Therefore, devices older than that may need to be created manually.
 
 We already have a SQL migration script that runs daily. New devices on the Production instance of **Gen1** are automatically created on the Production instance of **Gen2** [wadmp.com](https://wadmp.com).
-
-<u> Note: </u>
-
-The daily_migration script is in BitBucket here: [BitBucket Script Link](https://bitbucket.org/bbsmartworx/iotp-test/src/master/Tools/python/migration/?at=master) - Connect to preview  This script, along with some others, is run as a cron-job on [IE-DEVTEST-01](https://bbsmartworx.atlassian.net/wiki/spaces/LOC/pages/27230778/Test+Machines).
 
 **Scenario 2:** All devices must be created on the new private **Gen2** instance. This may be done via the **Gen2** [UI](https://wadmp.com/) or [API](https://api.wadmp.com/#!/).
 
@@ -30,13 +25,14 @@ If using the API, we provide an example Python script here: [WADMP GitHub](wadmp
 All required are the credentials of a user with Manufacturing (CreateDevice) permission.
 
 To create a list of the existing devices on the private **Gen1** instance, it should be possible to use a) the **Gen1** [REST API](https://hub.bb-smartworx.com/api/v2/) or b) a SQL query.
+:::
 
 ## Install the Gen2 WA/DMP Client User Module on all devices
 **Scenario 1&2:** The **Gen2** User Module can be installed via **Gen1**. This must be done via the **Gen1** UI, as there is no support for User Modules in the **Gen1** [REST API](https://hub.bb-smartworx.com/api/v2/). If the number of devices involved is large, a Configuration Profile could be used.
 
 The only issue may be getting the latest version of the **Gen2** User Module onto the **Gen1** instance. 
 
-<u> Note: </u>
+::: tip Note:
 
 From January 2019, all devices leaving the factory will have the **Gen1** WA/DMP Client User Module (wadmp_client) installed.
 
@@ -47,14 +43,16 @@ Reference: [Product Change Notification PDF](https://ep.advantech-bb.cz/support/
 All new devices leaving the factory also have the **Gen2** WA/DMP Client User Module (wadmp_client) installed and enabled. We do not know when this change was introduced but assume 2019 or 2020.
 
 The “-SWH” suffix also determines if the **Gen2** client is enabled or disabled.
+:::
 
 ## Configure the Gen2 WA/DMP Client User Module to connect to the new Gen2 instance
 
-<u> Note: </u>
+::: tip Note:
 
 This step confuses because, by design, a **Gen2** client can NOT be directed to a Management Server directly. It must connect to a Bootstrap Server first, and the Bootstrap Server then a) issues a certificate to the device and b) redirects the device to a Management Server,
 
 The **Gen2** WA/DMP Client User Module has one particular configuration item: "Bootstrap Server Address”. This defaults to [“bootstrap.wadmp.com”](http://bootstrap.wadmp.com/#/login?redirect=%2F). This configuration can NOT be changed from **Gen1** or **Gen2**.
+:::
 
 **Scenario 1:** No work required. The **Gen2** User Module will automatically connect to the Production instance of **Gen2**. By default, the Bootstrap Server in the Production instance of **Gen2** will direct all devices to the Management Server in the Production instance of **Gen2**.
 
@@ -74,13 +72,17 @@ We could consider allowing the **Gen2** User Module to be configured via **Gen1*
 
 We could consider building a custom version of the **Gen2** User Module, where the default value of the Boostrap Server Address is changed. Note that this would also have implications for Step 2 above.
 
+:::warning Warning:
+
 Any workaround that involves modifying the Bootstrap Server Address on a device should be avoided. By design, a Bootstrap Server provides a reliable fall-back mechanism if, for any reason, the connection to a Management Server should fail. If you allow the Bootstrap Server Address to be re-configured, you risk losing the device with no recovery mechanism. Therefore, we do NOT allow the Bootstrap Server Address to be remotely configured via **Gen1** or **Gen2**.
 
 In summary, we should advise customers that it only makes sense to deploy a private **Gen2** instance if their devices will be using a private APN!
 
+:::
+
 ## Establish what Desired State is required on Gen2 for each device
 
-<u> Note: </u>
+::: tip Note:
 
 When a device connects to **Gen2**, it will automatically report its current configuration. This is also known as the “Reported State” of the device. In **Gen2**, every device also has a “Desired State” blank by default.
 
@@ -90,11 +92,13 @@ Conversely, if local changes are not possible on the customer’s devices, devic
 
 However, if the customer anticipates adding new devices directly to **Gen2**, they will need to define a Desired State.
 
+:::
+
 **Scenario 1&2:** This may be done via the **Gen2** [UI](https://wadmp.com/) or [API](https://api.wadmp.com/#!/).
 
 If you want to configure multiple devices with the same Desired State, then in the UI, we provide the “Playbook” feature. Also, see the public Bulk Configuration scripts [here](https://github.com/wadmp/wadmp.github.io/tree/master/python_scripts/bulk_configure).
 
-<u> Note: </u>
+::: tip Note:
 
 If the customer was using the “Configuration Profile” feature on **Gen1**, it is essential to explain that this feature is NOT available on **Gen2**. This is not a problem because we believe the **Gen2** design is superior in every respect, but it may confuse.
 
@@ -103,6 +107,8 @@ When a device is a member of a Configuration Profile on **Gen1**, it can NOT be 
 In **Gen2**, every device has its individual “Desired State”, whether or not it is part of a group, Playbook, or anything else. The “Sync Engine” in **Gen2** continuously compares the Reported and Desired States for every device and strives to make them equal.
 
 The “Playbook” feature in **Gen2** only exists to make it easy to configure the Desired State of several devices simultaneously. Once a Playbook has been run once, it has had no effect.
+
+:::
 
 ## Disable the Gen1 WA/DMP Client User Module on all devices
 
@@ -134,4 +140,6 @@ When purchasing cellular routers, the customer may have been using a particular 
 
 **Scenario 2:** Review Step 3 above regarding what is required to direct a device to the new **Gen2** instance. The customer may want to consider customizing new devices to make the process easier.
 
-From a security perspective, it is essential to remember that Factory Bootstrap is always preferred over Client-Initiated Bootstrap. i.e., The ideal scenario is that devices leave the factory already provisioned with a private key and a certificate for their intended Management Server. This applies to Scenario 1 (public instances) and Scenario 2 (private instances). However, we do not have any support for Factory Bootstrap in Usti at the time of writing. It would not be difficult to implement this for Scenario 1. For Scenario 2, it would only be possible if the customer allows factory access to their private API and Bootstrap Server.
+::: warning Warning:
+From a security perspective, it is essential to remember that Factory Bootstrap is always preferred over Client-Initiated Bootstrap. i.e., The ideal scenario is that devices leave the factory already provisioned with a private key and a certificate for their intended Management Server. This applies to Scenario 1 (public instances) and Scenario 2 (private instances). However, we do not have any support for Factory Bootstrap at the time of writing. It would not be difficult to implement this for Scenario 1. For Scenario 2, it would only be possible if the customer allows factory access to their private API and Bootstrap Server.
+:::
