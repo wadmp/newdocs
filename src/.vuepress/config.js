@@ -79,7 +79,9 @@ module.exports = {
         'grafana/',  /* /README.md */
         'alerts/',  /* /README.md */
         'auditing-options/',  /* /README.md */
-        'gen1-to-gen2-migration/'  /* /README.md */
+        'gen1-to-gen2-migration/',  /* /README.md */
+        'I-cant-connect-my-device/',  /* /README.md */
+        'adding-or-claiming-devices-in-bulk/'  /* /README.md */
 
       ],
       '/release-notes/': [

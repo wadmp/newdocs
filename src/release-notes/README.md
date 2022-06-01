@@ -2,7 +2,7 @@
 
 * This release contains UI improvements, appearance changes, and bug fixes.
 
-## Improvements:
+### Improvements:
 
 * **Changed the date format to ISO standard YYYY-MM-DD across the UI.**
 
@@ -57,7 +57,7 @@
 
 *  The **Premium label** at Alerts menu item now disappears once the user is in Premium companies.
 
-## Bugfixes:
+### Bugfixes:
 
 * Fixed multiple visual bugs and details: alignments, cropped company filter pills, unified bold text usage, added missing description tooltips. 
 
