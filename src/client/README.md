@@ -2,9 +2,9 @@
 
 ## Latest version:
 
-### v2.1.3 (2021-12-08)
-* If the router does not measure temperature, send value was modified from 0 degrees to -273 degrees
-* Modification of return codes when installation failure occurs.
+### v2.1.4 (2022-04-28)
+* Added idempotency token for handling repeated request, which have already been handled.
+* Added welcome page to the router.
 
 ## Download:
 
@@ -17,7 +17,11 @@ The client router app can also be upgraded via WebAccess/DMP.
 
 ## Previous versions:
 
-### v2.1.2 (2021-08-03):
+### v2.1.3 (2021-12-08)
+* If the router does not measure temperature, send value was modified from 0 degrees to -273 degrees
+* Modification of return codes when installation failure occurs.
+
+### v2.1.2 (2021-08-03)
 * Added trace log level
 * MQTT keepalive is now configurable
 * Fixed collision between Use Module settings and FirmWare section settings
