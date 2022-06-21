@@ -9,10 +9,10 @@ on:
     # Inputs the workflow accepts.
     
 jobs:
-  example-job:
+  deploy-job:
     runs-on: ubuntu-latest
     steps:
       - name: Run build script
-        run: ./deploy.sh
+        run: ls -al
         shell: bash
 
