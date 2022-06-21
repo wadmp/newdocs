@@ -12,6 +12,7 @@ jobs:
   deploy-job:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Run build script
         run: ls -al
         shell: bash
