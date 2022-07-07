@@ -19,8 +19,15 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    /* ['link', {
+      rel: 'stylesheet',
+      href: `https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css`
+    }],
+    ['script', { src: `https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js` }],
+    ['script', { src: `https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js` }], */
   ],
+  dest: 'docs',
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
    *
@@ -29,10 +36,8 @@ module.exports = {
   themeConfig: {
     logo: '/assets/img/logo.png',
     repo: '',
-    editLinks: false,
     docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
+    lastUpdated: true,
     nav: [
       {
         text: 'Tutorials',
@@ -79,8 +84,8 @@ module.exports = {
         'grafana/',  /* /README.md */
         'alerts/',  /* /README.md */
         'auditing-options/',  /* /README.md */
-        'gen1-to-gen2-migration/',  /* /README.md */
-        'I-cant-connect-my-device/',  /* /README.md */
+        // 'gen1-to-gen2-migration/',  /* /README.md */
+        'cant-connect-my-device/',  /* /README.md */
         'adding-or-claiming-devices-in-bulk/'  /* /README.md */
 
       ],
@@ -109,7 +114,7 @@ module.exports = {
     // if your docs are in a different repo from your main project:
     docsRepo: 'wadmp/wadmp.github.io',
     // if your docs are not at the root of the repo:
-    docsDir: 'docs',
+    // docsDir: 'docs',
     // if your docs are in a specific branch (defaults to 'master'):
     // defaults to false, set to true to enable
     editLinks: true,
