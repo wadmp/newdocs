@@ -16,10 +16,12 @@ features:
   * [Latest Release Notes of the device Client](/client/)
 
 **Useful links:**
-* Public Cloud Instance:  UI: [wadmp.com](https://wadmp.com), API reference: [api.wadmp.com](https://api.wadmp.com)
-* Status Page: [status.wadmp.com](https://status.wadmp.com) 
-* [**WebAccess/DMP EULA**](/eula.html) - **End User License Agreement**
-* [**Privacy Policy**](/privacy-policy.html)
+* [wadmp.com](https://wadmp.com) - UI of Public Cloud Instance
+* [api.wadmp.com](https://api.wadmp.com) - API reference
+* [status.wadmp.com](https://status.wadmp.com) - Status Page
+* [wadmp.advantech.cz](https://wadmp.advantech.cz) - WebAccess/DMP product page
+* [WebAccess/DMP EULA](/eula.html) - End User License Agreement
+* [Privacy Policy](/privacy-policy.html)
 * [Support & Contact](/contact/)  
 
 ::: slot footer

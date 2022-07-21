@@ -10,13 +10,14 @@
         :src="$withBase(data.heroImage)"
         :alt="data.heroAlt || 'hero'"
       >
-
+      <!--
       <h1
         v-if="data.heroText !== null"
         id="main-title"
       >
-        {{ data.heroText || $title || 'Hello' }}
+        {{ data.heroText || $title || 'Hello' }} 
       </h1>
+      -->
 
       <p
         v-if="data.tagline !== null"
@@ -25,6 +26,7 @@
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
 
+      <!--
       <p
         v-if="data.actionText && data.actionLink"
         class="action"
@@ -34,6 +36,7 @@
           :item="actionLink"
         />
       </p>
+      -->
     </header>    
 
     <Content class="theme-default-content custom" />
